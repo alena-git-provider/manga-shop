@@ -1,0 +1,78 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://img1.akspic.ru/crops/6/2/1/2/7/172126/172126-anime-yudzi_itadori-ryomen_ego_nogi-dzhiu_dzhitsu_kajsen-multfilm-3840x2160.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home h1 {
+    font-size: 3rem;  
+    margin-top: 420px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 20px;
+    animation: fadeIn 2s ease-in-out, textGlow 2s ease-in-out infinite alternate;
+}
+
+.home p {
+    font-size: 2rem;
+    max-width: 250px;
+    text-align: center;
+    line-height: 1.8;
+    padding: 50px 15px; 
+    /* Сохранил ваш padding */
+    margin-left: 400px;
+    border-radius: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
+    animation: slideUp 2s ease-in-out, glowEffect 2s ease-in-out infinite alternate;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #6c1022, 0 0 20px #6c1022, 0 0 30px #6c1022;
+    }
+    100% {
+        text-shadow: 0 0 20px #6c1022, 0 0 30px #6c1022, 0 0 40px #6c1022;
+    }
+}
+
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5), 0 0 35px rgba(255, 255, 255, 0.3);
+    }
+}

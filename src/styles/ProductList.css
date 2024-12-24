@@ -1,0 +1,214 @@
+.mangas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://bogatyr.club/uploads/posts/2023-02/1677240176_bogatyr-club-p-fon-dlya-rabochego-stola-anime-foni-1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.mangas h1 {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-size: 3rem;
+}
+
+.manga-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    animation: fadeInGlow 2s ease-in-out;
+}
+
+
+.manga-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manga-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.7);
+}
+
+.manga-image {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.manga-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.manga-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.manga-description {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.manga-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Анимации */
+@keyframes fadeInGlow {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 25px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 10px #6c1022, 0 0 20px #6c1022, 0 0 30px #6c1022;
+    }
+    100% {
+        text-shadow: 0 0 10px #6c1022, 0 0 20px #6c1022, 0 0 30px #6c1022;
+    }
+}
+
+.mangas input[type="text"] {
+    width: 80%;
+    max-width: 600px;
+    padding: 7px 15px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mangas input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mangas input[type="text"]:focus {
+    border: 2px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.manga-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.manga-card {
+    width: calc(33.333% - 20px); /* Каждая карточка занимает треть контейнера */
+    max-width: 400px;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manga-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.7);
+}
+
+.manga-image {
+    width: 100%;
+    height: 550px;
+    display: block;
+}
+
+.manga-details {
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.manga-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.manga-description {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.manga-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffcc00;
+}
+
+/* Стиль для кнопки "Добавить в корзину" */
+.manga-card button {
+    background-color:  #6c1022; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    padding: 10px 20px; /* Отступы */
+    font-size: 1rem; /* Размер текста */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход */
+  }
+  
+  /* Эффект при наведении на кнопку */
+  .manga-card button:hover {
+    background-color: #007106; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+  }
+  
+  /* Эффект при нажатии на кнопку */
+  .manga-card button:active {
+    transform: scale(0.98); /* Немного уменьшить кнопку при клике */
+  }
+  
+  /* Дополнительные стили для кнопки на мобильных устройствах */
+  @media (max-width: 600px) {
+    .manga-card button {
+      width: 100%; /* Кнопка занимает всю ширину на мобильных */
+      font-size: 1.2rem; /* Немного увеличиваем шрифт */
+    }
+  }
+  

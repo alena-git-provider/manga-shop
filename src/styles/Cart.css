@@ -1,0 +1,138 @@
+/* Оверлей для затемнения фона при открытой корзине */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000; /* Обеспечиваем, чтобы корзина была на переднем плане */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* Контейнер для самой корзины */
+.cart-container {
+  width: 350px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px 0 0 10px;
+  transform: translateX(100%); /* Начальное состояние корзины за пределами экрана */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Когда корзина открыта, делаем её видимой */
+.cart-overlay .cart-container {
+  transform: translateX(0); /* Выдвигаем корзину */
+}
+
+/* Заголовок корзины */
+.cart-container h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Текст, если корзина пуста */
+.cart-container p {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Список продуктов */
+.cart-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100% - 150px);
+  overflow-y: auto;
+}
+
+/* Продукт в корзине */
+.cart-container li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-container li h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.cart-container li p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Стили для кнопки удаления */
+.cart-container button {
+  justify-content: center;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-container button:hover {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+  transform: scale(1.05);
+}
+/* Кнопка закрытия корзины */
+/* Кнопка закрытия корзины (слева) */
+.cart-container .close-btn {
+  position: absolute; /* Абсолютное позиционирование внутри контейнера */
+  top: 15px; /* Отступ сверху */
+  left: 15px; /* Отступ слева */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
+  transition: color 1s ease;
+}
+
+.cart-container .close-btn:hover {
+  color: #ffffff; /* Цвет кнопки при наведении */
+  transform: scale(1.1); /* Легкое увеличение при наведении */
+}
+
+/* Изображения продуктов */
+.cart-container img {
+  height: 100px; /* Уменьшаем размер, чтобы изображения были компактными */
+  width: 100px;
+  object-fit: cover; /* Обрезаем изображение, чтобы оно полностью занимало контейнер */
+  border-radius: 10px; /* Закругляем углы для более мягкого дизайна */
+  border: 1px solid #ddd; /* Легкая рамка для выделения изображения */
+  margin-right: 15px; /* Отступ справа для расстояния между текстом и изображением */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для визуального эффекта */
+}
+
+/* Карточка продукта с изображением */
+.cart-container li {
+  display: flex; /* Располагаем изображение и текст в одну строку */
+  align-items: center; /* Центрируем элементы по вертикали */
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  gap: 10px; /* Расстояние между изображением и текстом */
+}
